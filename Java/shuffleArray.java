@@ -1,5 +1,5 @@
 import java.util.Arrays;
-import java.util.Random;
+// import java.util.Random;
 
 public class shuffleArray {
     public static void main(String[] args) {
@@ -10,13 +10,18 @@ public class shuffleArray {
 
     private static void shuffleArr(int[] array) {
         int n = array.length;
-        Random random = new Random();
+        // Random random = new Random();
 
         for (int i = n - 1; i > 0; i--) {
-            int randomIndex = random.nextInt(i + 1);
+            int randomIndex = randomIndex(i + 1);
             int temp = array[i];
             array[i] = array[randomIndex];
             array[randomIndex] = temp;
         }
     }
+
+    private static int randomIndex(int bound) {
+        return (int) (Math.random() * bound);
+    }
 }
+
